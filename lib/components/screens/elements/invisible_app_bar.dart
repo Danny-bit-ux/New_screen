@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class InvisibleAppBar extends StatelessWidget {
+  final String name;
   const InvisibleAppBar({
     Key key,
+    this.name,
   }) : super(key: key);
 
   @override
@@ -11,8 +14,19 @@ class InvisibleAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          CircleAvatar(
-            backgroundImage: AssetImage('asset/images/image.jpg'),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 15),
+            height: 50.0,
+            width: 50.0,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 0),
+                ),
+              ],
+            ),
           ),
           RichText(
             text: TextSpan(
@@ -26,7 +40,7 @@ class InvisibleAppBar extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: 'Jim Carey',
+                  text: name,
                   style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,
@@ -36,7 +50,7 @@ class InvisibleAppBar extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 60.0),
+            margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 15),
             height: 50.0,
             width: 50.0,
             decoration: BoxDecoration(
@@ -49,6 +63,7 @@ class InvisibleAppBar extends StatelessWidget {
               ],
             ),
             child: IconButton(
+              mouseCursor: SystemMouseCursors.click,
               icon: Icon(Icons.bookmark),
               onPressed: () {},
             ),

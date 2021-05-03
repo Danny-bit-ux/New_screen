@@ -14,7 +14,7 @@ class MyBottomBar extends StatelessWidget {
         right: kDefaultPadding * 2,
         bottom: kDefaultPadding,
       ),
-      height: 45,
+      height: 75,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(15),
@@ -32,13 +32,31 @@ class MyBottomBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.home_outlined),
+          ElevatedButton(
             onPressed: () {},
+            child: Column(
+              children: [
+                Icon(Icons.home_outlined),
+                Text('Home'),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 3),
+                  height: 1,
+                  width: 10,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                ),
+              ],
+            ),
           ),
-          IconButton(
-            icon: Icon(Icons.book_outlined),
-            onPressed: () {},
+          Column(
+            children: [
+              IconButton(
+                icon: Icon(Icons.book_outlined),
+                onPressed: () {},
+              ),
+            ],
           ),
           IconButton(
             icon: Icon(Icons.message_outlined),

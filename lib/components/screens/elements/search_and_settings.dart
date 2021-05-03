@@ -15,7 +15,7 @@ class SearchBtnAndSettings extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Container(
             padding: EdgeInsets.all(10.0),
-            width: 320.0,
+            width: 300.0,
             height: 50.0,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -29,6 +29,7 @@ class SearchBtnAndSettings extends StatelessWidget {
             child: TextField(
               onChanged: (value) {},
               decoration: InputDecoration(
+                border: InputBorder.none,
                 suffixIcon: Icon(Icons.search),
                 hintText: "Search",
                 hintStyle: TextStyle(

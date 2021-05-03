@@ -24,14 +24,18 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        InvisibleAppBar(),
-        MyBestText(),
-        SearchBtnAndSettings(),
-        ContainerButtonInBlue(),
-        DuplexApartmentGuitar(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          InvisibleAppBar(
+            name: 'Jim Carey',
+          ),
+          MyBestText(),
+          SearchBtnAndSettings(),
+          ContainerButtonInBlue(),
+          DuplexApartmentGuitar(),
+        ],
+      ),
     );
   }
 }
