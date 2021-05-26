@@ -38,20 +38,23 @@ class AppButtonProduct extends StatelessWidget {
             child: Icon(Icons.arrow_back_ios),
           ),
         ),
-        Container(
-          margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15),
-          height: 50.0,
-          width: 50.0,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                offset: Offset(0, 0),
-              ),
-            ],
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15),
+            height: 50.0,
+            width: 50.0,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 0),
+                ),
+              ],
+            ),
+            child: Icon(Icons.bookmark_border),
           ),
-          child: Icon(Icons.bookmark_border),
         ),
       ],
     );

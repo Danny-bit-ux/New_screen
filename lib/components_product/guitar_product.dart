@@ -19,7 +19,7 @@ class GuitarProduct extends StatelessWidget {
 
   Padding buildPadding(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(2.0),
+      padding: const EdgeInsets.all(.0),
       child: GestureDetector(
         child: Container(
           height: 200.0,

@@ -28,16 +28,21 @@ class SearchBtnAndSettings extends StatelessWidget {
               ],
             ),
             child: TextField(
-              textAlignVertical: TextAlignVertical.center,
+              textAlign: TextAlign.start,
+              textAlignVertical: TextAlignVertical.bottom,
               enabled: true,
               keyboardType: TextInputType.name,
               onChanged: (value) {},
               decoration: InputDecoration(
                 border: InputBorder.none,
-                suffixIcon: Icon(Icons.search),
+                suffixIcon: Icon(
+                  Icons.search,
+                  color: Colors.black,
+                ),
+                hintMaxLines: 3,
                 hintText: "Search",
                 hintStyle: TextStyle(
-                  color: kPrimaryColor.withOpacity(0.5),
+                  color: Colors.grey.withOpacity(0.5),
                 ),
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,

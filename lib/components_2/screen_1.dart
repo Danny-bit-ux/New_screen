@@ -6,7 +6,10 @@ class ImageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Settings"),
+        backgroundColor: Colors.green,
+      ),
       body: Body2(),
     );
   }
@@ -30,9 +33,8 @@ class Body2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ConstrainedBox(
-        constraints: BoxConstraints(minHeight: 35.0, maxHeight: 160.0),
+    return Center(
+      child: Container(
         child: Row(
           children: <Widget>[
             Expanded(

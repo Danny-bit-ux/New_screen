@@ -23,6 +23,7 @@ class BodyTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         AppButtonProduct(),
         GuitarProduct(),
