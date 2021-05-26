@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screen/components_2/screen_1.dart';
 import 'package:flutter_screen/constants.dart';
 
 class SearchBtnAndSettings extends StatelessWidget {
@@ -27,6 +28,9 @@ class SearchBtnAndSettings extends StatelessWidget {
               ],
             ),
             child: TextField(
+              textAlignVertical: TextAlignVertical.center,
+              enabled: true,
+              keyboardType: TextInputType.name,
               onChanged: (value) {},
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -43,21 +47,30 @@ class SearchBtnAndSettings extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Container(
-            width: 50.0,
-            height: 50.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 0),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ImageScreen();
+                  },
                 ),
-              ],
-            ),
-            child: IconButton(
-              icon: Icon(Icons.settings),
-              onPressed: () {},
+              );
+            },
+            child: Container(
+              width: 50.0,
+              height: 50.0,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 0),
+                  ),
+                ],
+              ),
+              child: Icon(Icons.settings),
             ),
           ),
         ),

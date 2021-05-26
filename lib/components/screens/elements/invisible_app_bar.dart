@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_screen/components/screens/profile_screen.dart';
 
 class InvisibleAppBar extends StatelessWidget {
   final String name;
@@ -14,18 +15,31 @@ class InvisibleAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 15),
-            height: 50.0,
-            width: 50.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 0),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ProfileScreen();
+                  },
                 ),
-              ],
+              );
+            },
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 15),
+              height: 50.0,
+              width: 50.0,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 0),
+                  ),
+                ],
+              ),
+              child: Image.asset('asset/images/image.jpg'),
             ),
           ),
           RichText(
@@ -49,23 +63,22 @@ class InvisibleAppBar extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 15),
-            height: 50.0,
-            width: 50.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 0),
-                ),
-              ],
-            ),
-            child: IconButton(
-              mouseCursor: SystemMouseCursors.click,
-              icon: Icon(Icons.bookmark),
-              onPressed: () {},
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 15),
+              height: 50.0,
+              width: 50.0,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 0),
+                  ),
+                ],
+              ),
+              child: Icon(Icons.bookmark_border),
             ),
           ),
         ],

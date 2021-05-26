@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screen/components/screens/home_screen.dart';
+import 'package:flutter_screen/components/screens/screen_2.dart';
+import 'package:flutter_screen/components/screens/screen_3.dart';
 import 'package:flutter_screen/constants.dart';
 
 class MyBottomBar extends StatelessWidget {
@@ -32,35 +35,44 @@ class MyBottomBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          ElevatedButton(
-            onPressed: () {},
-            child: Column(
-              children: [
-                Icon(Icons.home_outlined),
-                Text('Home'),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 3),
-                  height: 1,
-                  width: 10,
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(18),
-                  ),
+          IconButton(
+            icon: Icon(Icons.home_outlined),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return HomeScreen();
+                  },
                 ),
-              ],
-            ),
+              );
+            },
           ),
-          Column(
-            children: [
-              IconButton(
-                icon: Icon(Icons.book_outlined),
-                onPressed: () {},
-              ),
-            ],
+          IconButton(
+            icon: Icon(Icons.book_outlined),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return MyScreenTwo();
+                  },
+                ),
+              );
+            },
           ),
           IconButton(
             icon: Icon(Icons.message_outlined),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return MyScreenThree();
+                  },
+                ),
+              );
+            },
           ),
           IconButton(
             icon: Icon(Icons.bookmark_border_outlined),
