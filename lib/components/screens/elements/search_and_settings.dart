@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screen/components_2/screen_1.dart';
-import 'package:flutter_screen/constants.dart';
 
 class SearchBtnAndSettings extends StatelessWidget {
   const SearchBtnAndSettings({

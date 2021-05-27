@@ -27,7 +27,9 @@ class BodyTwo extends StatelessWidget {
       children: <Widget>[
         AppButtonProduct(),
         GuitarProduct(),
+        Spacer(),
         buildColumn(),
+        Spacer(),
         RowJohnSmith(),
         ContainerBookNow(),
       ],
