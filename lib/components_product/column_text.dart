@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screen/components/information/information_card_product.dart';
 
 import '../constants.dart';
 
-Column buildColumn() {
+Column buildColumn({name, york, comment, price}) {
+  //String name, york, comment;
+
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
+      SizedBox(
+        height: 15.0,
+      ),
       Text(
-        'Duplex Apartment',
+        name,
         style: TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.bold,
@@ -14,15 +21,18 @@ Column buildColumn() {
         ),
         textAlign: TextAlign.start,
       ),
+      SizedBox(
+        height: 12.0,
+      ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text(
-            'Stockton, New Hampshire',
-            style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w300,
-                fontSize: 12.0),
+            york,
+            style: kTextYork,
+          ),
+          SizedBox(
+            height: 19.0,
           ),
           Row(
             children: <Widget>[
@@ -32,15 +42,15 @@ Column buildColumn() {
                 color: Colors.yellow[600],
               ),
               Text(
-                '(256 Review)',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 12.0),
+                comment,
+                style: kTextYork,
               )
             ],
           ),
         ],
+      ),
+      SizedBox(
+        height: 20.0,
       ),
       Row(
         children: <Widget>[
@@ -50,10 +60,7 @@ Column buildColumn() {
           ),
           Text(
             '5   ',
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold),
+            style: kTextNum,
           ),
           Icon(
             Icons.access_alarm,
@@ -61,10 +68,7 @@ Column buildColumn() {
           ),
           Text(
             '2  ',
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold),
+            style: kTextNum,
           ),
           Icon(
             Icons.accessibility,
@@ -72,36 +76,38 @@ Column buildColumn() {
           ),
           Text(
             '1',
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold),
+            style: kTextNum,
           ),
         ],
+      ),
+      SizedBox(
+        height: 20.0,
       ),
       Row(
         children: <Widget>[
           Text(
-            '\$1,500',
+            price,
             style: TextStyle(
                 fontSize: 20.0, fontWeight: FontWeight.bold, color: kTextColor),
           ),
           Text(
             ' / mo',
-            style: TextStyle(
-                color: Colors.grey,
-                fontSize: 15.0,
-                fontWeight: FontWeight.w300),
+            style: kTextYork,
           ),
         ],
       ),
-      Text(
-        'Description:',
-        style: TextStyle(
-            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18.0),
+      SizedBox(
+        height: 50.0,
       ),
       Text(
-        'The flat for rent provides the extract comfortable lifestyle that you have been looking for. Covers area as a whole the flat also has faculities that come along with this edifice.',
+        'Description:',
+        style: kTextStyleNam,
+      ),
+      SizedBox(
+        height: 10.0,
+      ),
+      Text(
+        iTextInfo,
         style: TextStyle(
             color: Colors.black, fontWeight: FontWeight.normal, fontSize: 15.0),
       ),

@@ -5,10 +5,18 @@ import 'package:flutter_screen/constants.dart';
 
 // ignore: must_be_immutable
 class DuplexApartmentGuitar extends StatelessWidget {
-  var index;
+  final String name, york, comment, image;
+
+  final double note, price;
 
   DuplexApartmentGuitar({
     Key key,
+    this.name,
+    this.york,
+    this.comment,
+    this.note,
+    this.price,
+    this.image,
   }) : super(key: key);
 
   @override
@@ -43,23 +51,24 @@ class DuplexApartmentGuitar extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 offset: Offset(0, 0),
+                blurRadius: 3.0,
+                //spreadRadius: 5.0,
               ),
             ],
           ),
           child: Row(
             children: <Widget>[
               GestureDetector(
-                onTap: () => _fullImagePage(context, index.toString()),
+                onTap: () => _fullImagePage(context),
                 child: Hero(
-                  tag: index.toString(),
+                  tag: 'my-tag',
                   child: Container(
                     height: 180.0,
                     width: 150.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Image.asset(
-                        'asset/images/electric_guitar_PNG24177.png'),
+                    child: Image.asset(image),
                   ),
                 ),
               ),
@@ -69,19 +78,13 @@ class DuplexApartmentGuitar extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'Gibson Les Paul Custom', //Name
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold),
+                      name, //Name
+                      style: kTextStyleNam,
                     ),
                     Spacer(),
                     Text(
-                      'Stockton, New Hampshire', //York
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w300),
+                      york, //York
+                      style: kTextYork,
                     ),
                     Spacer(),
                     Row(
@@ -92,18 +95,12 @@ class DuplexApartmentGuitar extends StatelessWidget {
                           color: Colors.yellow[600],
                         ),
                         Text(
-                          '4.8', //Note
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold),
+                          "4,8", //Note
+                          style: kTextNum,
                         ),
                         Text(
-                          " (256 Review's)", //Comment
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w300),
+                          comment, //Comment
+                          style: kTextYork,
                         ),
                       ],
                     ),
@@ -116,10 +113,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
                         ),
                         Text(
                           '5   ',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold),
+                          style: kTextNum,
                         ),
                         Icon(
                           Icons.access_alarm,
@@ -127,10 +121,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
                         ),
                         Text(
                           '2  ',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold),
+                          style: kTextNum,
                         ),
                         Icon(
                           Icons.accessibility,
@@ -138,10 +129,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
                         ),
                         Text(
                           '1',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold),
+                          style: kTextNum,
                         ),
                       ],
                     ),
@@ -149,7 +137,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Text(
-                          '\$1,500',
+                          "\$1,500",
                           style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
@@ -157,10 +145,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
                         ),
                         Text(
                           ' / mo',
-                          style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w300),
+                          style: kTextYork,
                         ),
                       ],
                     )
@@ -174,20 +159,20 @@ class DuplexApartmentGuitar extends StatelessWidget {
     );
   }
 
-  void _fullImagePage(BuildContext context, String tag) {
+  void _fullImagePage(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (ctx) => Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFFFFFF1),
-          title: Text('Big Image'),
+          backgroundColor: Color(0xFFFFFF),
+          title: Text(name),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Hero(
-                tag: tag,
-                child: Image.asset('asset/images/electric_guitar_PNG24177.png'),
+                tag: 'my-tag',
+                child: Image.asset(image),
               )
             ],
           ),

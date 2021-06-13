@@ -11,52 +11,34 @@ class AppButtonProduct extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return HomeScreen();
-                },
-              ),
-            );
-          },
-          child: Container(
-            margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
-            height: 50.0,
-            width: 50.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 0),
-                ),
-              ],
-            ),
-            child: Icon(Icons.arrow_back_ios),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15),
-            height: 50.0,
-            width: 50.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 0),
-                ),
-              ],
-            ),
-            child: Icon(Icons.bookmark_border),
-          ),
-        ),
+        buildIcContainer(
+            icon: Icon(Icons.arrow_back),
+            tap: () {
+              Navigator.pop(context, MaterialPageRoute(builder: (context) {
+                return HomeScreen();
+              }));
+            }),
+        buildIcContainer(icon: Icon(Icons.bookmark_border), tap: () {}),
       ],
+    );
+  }
+
+  Container buildIcContainer({Icon icon, Null Function() tap}) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
+      height: 50.0,
+      width: 50.0,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 0),
+          ),
+        ],
+      ),
+      child: InkWell(
+          onTap: tap, borderRadius: BorderRadius.circular(16), child: icon),
     );
   }
 }

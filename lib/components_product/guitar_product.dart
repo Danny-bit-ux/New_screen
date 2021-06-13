@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class GuitarProduct extends StatelessWidget {
-  var index;
-
   GuitarProduct({
     Key key,
   }) : super(key: key);
@@ -19,7 +17,7 @@ class GuitarProduct extends StatelessWidget {
 
   Padding buildPadding(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(.0),
+      padding: const EdgeInsets.all(1.0),
       child: GestureDetector(
         child: Container(
           height: 200.0,
@@ -27,16 +25,11 @@ class GuitarProduct extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                offset: Offset(0, 0),
-              ),
-            ],
           ),
           child: GestureDetector(
-            onTap: () => _fullImagePage(context, index.toString()),
+            onTap: () => _fullImagePage(context),
             child: Hero(
-              tag: index.toString(),
+              tag: 'tag-string',
               child: Container(
                 height: 180.0,
                 width: 150.0,
@@ -52,19 +45,19 @@ class GuitarProduct extends StatelessWidget {
     );
   }
 
-  void _fullImagePage(BuildContext context, String tag) {
+  void _fullImagePage(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (ctx) => Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFFFFF1),
-          title: Text('Big Image'),
+          title: Text('Gibson Les Paul'),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Hero(
-                tag: tag,
+                tag: 'tag-string',
                 child: Image.asset('asset/images/electric_guitar_PNG24177.png'),
               )
             ],

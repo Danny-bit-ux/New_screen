@@ -1,85 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screen/components/screens/home_screen.dart';
-import 'package:flutter_screen/components/screens/screen_2.dart';
-import 'package:flutter_screen/components/screens/screen_3.dart';
-import 'package:flutter_screen/constants.dart';
 
-class MyBottomBar extends StatelessWidget {
-  const MyBottomBar({
-    Key key,
-  }) : super(key: key);
+class MyBottomBar extends StatefulWidget {
+  MyBottomBar({Key key}) : super(key: key);
 
   @override
+  _BotNavBarState createState() => _BotNavBarState();
+}
+
+class _BotNavBarState extends State<MyBottomBar> {
+  int _currentTabIndex = 0;
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        left: kDefaultPadding * 2,
-        right: kDefaultPadding * 2,
-        bottom: kDefaultPadding,
-      ),
-      height: 75,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(15),
-          bottomRight: Radius.circular(15),
+    final _kTabPages = <Widget>[
+      HomeScreen(),
+      const Center(
+        child: Icon(
+          Icons.alarm,
+          size: 64,
+          color: Colors.teal,
         ),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, -10),
-            blurRadius: 35,
-            color: kPrimaryColor.withOpacity(0.38),
-          ),
-        ],
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.home_outlined),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return HomeScreen();
-                  },
-                ),
-              );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.book_outlined),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return MyScreenTwo();
-                  },
-                ),
-              );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.message_outlined),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return MyScreenThree();
-                  },
-                ),
-              );
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.bookmark_border_outlined),
-            onPressed: () {},
-          ),
-        ],
+      const Center(
+        child: Icon(
+          Icons.ac_unit,
+          size: 64,
+          color: Colors.teal,
+        ),
       ),
+    ];
+    final _kBottomNavBarItems = <BottomNavigationBarItem>[
+      const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+      const BottomNavigationBarItem(icon: Icon(Icons.alarm), label: 'History'),
+      const BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: 'New'),
+    ];
+    assert(_kTabPages.length == _kBottomNavBarItems.length);
+    final bottomNavBar = BottomNavigationBar(
+      items: _kBottomNavBarItems,
+      currentIndex: _currentTabIndex,
+      type: BottomNavigationBarType.fixed,
+      onTap: (int index) {
+        setState(() {
+          _currentTabIndex = index;
+        });
+      },
+    );
+    return Scaffold(
+      body: _kTabPages[_currentTabIndex],
+      bottomNavigationBar: bottomNavBar,
     );
   }
 }

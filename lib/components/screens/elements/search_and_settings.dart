@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screen/components_2/screen_1.dart';
+import 'package:flutter_screen/components/screens/settings_screen.dart';
 
 class SearchBtnAndSettings extends StatelessWidget {
   const SearchBtnAndSettings({
@@ -23,6 +23,7 @@ class SearchBtnAndSettings extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   offset: Offset(0, 0),
+                  blurRadius: 1.0,
                 ),
               ],
             ),
@@ -41,7 +42,7 @@ class SearchBtnAndSettings extends StatelessWidget {
                 hintMaxLines: 3,
                 hintText: "Search",
                 hintStyle: TextStyle(
-                  color: Colors.grey.withOpacity(0.5),
+                  color: Colors.grey,
                 ),
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
@@ -57,7 +58,7 @@ class SearchBtnAndSettings extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return ImageScreen();
+                    return SettingsScreen();
                   },
                 ),
               );
@@ -71,6 +72,7 @@ class SearchBtnAndSettings extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 0),
+                    blurRadius: 1.0,
                   ),
                 ],
               ),

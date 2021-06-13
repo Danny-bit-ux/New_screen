@@ -44,7 +44,9 @@ class CardProfile extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: Image.asset('asset/images/image.jpg'),
+                  child: Image.asset(
+                    'asset/images/image.jpg',
+                  ),
                 ),
               ),
             ),
