@@ -10,10 +10,12 @@ class CardProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        buildPadding(context),
-      ],
+    return SafeArea(
+      child: Column(
+        children: <Widget>[
+          buildPadding(context),
+        ],
+      ),
     );
   }
 
@@ -34,18 +36,21 @@ class CardProfile extends StatelessWidget {
         ),
         child: Row(
           children: <Widget>[
-            GestureDetector(
-              onTap: () => _fullImagePage(context, index.toString()),
-              child: Hero(
-                tag: index.toString(),
-                child: Container(
-                  height: 180.0,
-                  width: 150.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Image.asset(
-                    'asset/images/image.jpg',
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: GestureDetector(
+                onTap: () => _fullImagePage(context, index.toString()),
+                child: Hero(
+                  tag: index.toString(),
+                  child: Container(
+                    height: 180.0,
+                    width: 150.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Image.asset(
+                      'asset/images/image.jpg',
+                    ),
                   ),
                 ),
               ),
@@ -84,7 +89,7 @@ class CardProfile extends StatelessWidget {
       builder: (ctx) => Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFFFFF1),
-          title: Text('Big Image'),
+          title: Text('My Avatar'),
         ),
         body: Center(
           child: Column(

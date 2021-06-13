@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_screen/components/screens/profile_screen.dart';
 
 import '../../../constants.dart';
 
@@ -23,7 +24,16 @@ class InvisibleAppBar extends StatelessWidget {
               "asset/images/image.jpg",
               fit: BoxFit.cover,
             ),
-            tap: () {},
+            tap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ProfileScreen();
+                  },
+                ),
+              );
+            },
           ),
           buildRichText(
             name: 'Jim Carey',
