@@ -1,22 +1,4 @@
-import 'package:flutter/material.dart';
-
-class ContainerBookNow extends StatefulWidget {
-  const ContainerBookNow({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  _ContainerBookNowState createState() => _ContainerBookNowState();
-}
-
-var selected = [];
-
-class _ContainerBookNowState extends State<ContainerBookNow> {
-  Object index;
-
-  @override
-  Widget build(BuildContext context) {
-    return FilterChip(
+FilterChip(
       label: Container(
         margin: EdgeInsets.symmetric(vertical: 10.0),
         width: 350.0,

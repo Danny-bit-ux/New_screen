@@ -5,14 +5,18 @@ class SettingsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Text(
-          "Short by",
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18.0),
-        )
-      ],
+    return SafeArea(
+      child: Column(
+        children: <Widget>[
+          Text(
+            "Short by",
+            style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0),
+          )
+        ],
+      ),
     );
   }
 }

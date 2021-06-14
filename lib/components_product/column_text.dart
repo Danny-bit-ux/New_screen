@@ -81,7 +81,7 @@ Column buildColumn({name, york, comment, price}) {
         ],
       ),
       SizedBox(
-        height: 20.0,
+        height: 10.0,
       ),
       Row(
         children: <Widget>[

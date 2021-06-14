@@ -1,0 +1,10 @@
+selected: _value == index,
+            selectedColor: Colors.amber,
+            selectedShadowColor: Colors.red,
+            onSelected: (bool value) {
+              setState(() {
+                _value = value ? index : null;
+              });
+            },
+            backgroundColor: Colors.blue,
+            labelStyle: TextStyle(color: Colors.white),

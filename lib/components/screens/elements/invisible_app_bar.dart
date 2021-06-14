@@ -4,7 +4,7 @@ import 'package:flutter_screen/components/screens/profile_screen.dart';
 
 import '../../../constants.dart';
 
-class InvisibleAppBar extends StatelessWidget {
+class InvisibleAppBar extends StatelessWidget implements PreferredSize {
   final Icon icon;
   final String name;
   const InvisibleAppBar({
@@ -113,4 +113,12 @@ class InvisibleAppBar extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  // TODO: implement child
+  Widget get child => throw UnimplementedError();
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => throw UnimplementedError();
 }

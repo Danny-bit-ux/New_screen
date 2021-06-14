@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
-class ContainerButtonInBlue extends StatelessWidget {
+class ContainerButtonInBlue extends StatefulWidget {
   final String name;
   final Icon icon;
 
   const ContainerButtonInBlue({Key key, this.name, this.icon})
       : super(key: key);
+
+  @override
+  _ContainerButtonInBlueState createState() => _ContainerButtonInBlueState();
+}
+
+int _value = 1;
+
+class _ContainerButtonInBlueState extends State<ContainerButtonInBlue> {
+  var index;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
