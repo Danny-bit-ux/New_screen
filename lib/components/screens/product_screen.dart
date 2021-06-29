@@ -26,44 +26,41 @@ class BodyTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Stack(
         children: <Widget>[
-          Stack(
-            children: <Widget>[
-              Container(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    children: <Widget>[
-                      AppButtonProduct(),
-                      GuitarProduct(),
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: buildColumn(
-                          name: iTextName,
-                          york: iTextYork,
-                          comment: iTextComment,
-                          price: iTextPrice,
-                        ),
-                      ),
-                    ],
+          Container(
+            child: Column(
+              children: <Widget>[
+                AppButtonProduct(),
+                GuitarProduct(
+                  image: 'asset/images/electric_guitar_PNG24177.png',
+                  tag: 'tag-string',
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: buildColumn(
+                    name: iTextName,
+                    york: iTextYork,
+                    comment: iTextComment,
+                    price: iTextPrice,
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-          Stack(
-            children: <Widget>[
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    RowJohnSmith(),
-                    ContainerBookNow(),
-                  ],
-                ),
+          Positioned(
+            left: 0.0,
+            right: 0.0,
+            bottom: 0.0,
+            child: Container(
+              color: Colors.white,
+              child: Column(
+                children: <Widget>[
+                  RowJohnSmith(),
+                  ContainerBookNow(),
+                ],
               ),
-            ],
+            ),
           ),
         ],
       ),

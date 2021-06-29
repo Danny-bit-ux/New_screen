@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screen/components/screens/product_screen.dart';
+import 'package:flutter_screen/components/screens/product_screen_gu.dart';
 
 import 'elements/cont_button.dart';
 import 'elements/duplex_apartment.dart';
@@ -36,15 +38,38 @@ class Body extends StatelessWidget {
               york: 'Stockton, New Hampshire',
               comment: " (256 Review's)",
               image: 'asset/images/electric_guitar_PNG24177.png',
+              tag: 'gibson-tag',
+              tap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ProductScreen();
+                    },
+                  ),
+                );
+              },
               //note: 4.8,
-              //price: 1.500,
+              price: 1500,
             ),
-            //DuplexApartmentGuitar(
-            //name: 'ESP LTD Les Paul',
-            //york: 'U.S.A, Maiami',
-            //comment: " (549 Review's)",
-            //image: 'asset/images/guitar_PNG3368.png',
-            //),
+            DuplexApartmentGuitar(
+              name: 'ESP LTD Les Paul',
+              york: 'U.S.A, Maiami',
+              comment: " (549 Review's)",
+              image: 'asset/images/electric_guitar_PNG24179.png',
+              tag: 'esp-tag',
+              tap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ProductScreenGu();
+                    },
+                  ),
+                );
+              },
+              price: 1349,
+            ),
             //DuplexApartmentGuitar(),
           ],
         ),

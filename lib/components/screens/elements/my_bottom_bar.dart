@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screen/components/screens/home_screen.dart';
 
+import '../settings_screen.dart';
+
 class MyBottomBar extends StatefulWidget {
   MyBottomBar({Key key}) : super(key: key);
 
@@ -21,18 +23,13 @@ class _BotNavBarState extends State<MyBottomBar> {
           color: Colors.teal,
         ),
       ),
-      const Center(
-        child: Icon(
-          Icons.ac_unit,
-          size: 64,
-          color: Colors.teal,
-        ),
-      ),
+      SettingsScreen(),
     ];
     final _kBottomNavBarItems = <BottomNavigationBarItem>[
       const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
       const BottomNavigationBarItem(icon: Icon(Icons.alarm), label: 'History'),
-      const BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: 'New'),
+      const BottomNavigationBarItem(
+          icon: Icon(Icons.ac_unit), label: 'Settings'),
     ];
     assert(_kTabPages.length == _kBottomNavBarItems.length);
     final bottomNavBar = BottomNavigationBar(

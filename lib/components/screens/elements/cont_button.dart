@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screen/components_product/container_book_now.dart';
 
 class ContainerButtonInBlue extends StatefulWidget {
   final String name;
@@ -51,31 +52,28 @@ class _ContainerButtonInBlueState extends State<ContainerButtonInBlue> {
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: InkWell(
-          onTap: () {},
-          child: Container(
-            height: 100.0,
-            width: 80.0,
-            decoration: BoxDecoration(
-              color: Colors.blue[100],
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 0),
-                  blurRadius: 1.0,
-                )
-              ],
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Icon(icon),
-                Text(
-                  name,
-                  style: TextStyle(fontSize: 13.0),
-                ),
-              ],
-            ),
+        child: Container(
+          height: 100.0,
+          width: 80.0,
+          decoration: BoxDecoration(
+            color: Colors.blue[100],
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(0, 0),
+                blurRadius: 1.0,
+              )
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Icon(icon),
+              Text(
+                name,
+                style: TextStyle(fontSize: 13.0),
+              ),
+            ],
           ),
         ),
       ),

@@ -8,6 +8,7 @@ class SearchBtnAndSettings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -52,32 +53,20 @@ class SearchBtnAndSettings extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return SettingsScreen();
-                  },
+          child: Container(
+            width: 50.0,
+            height: 50.0,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 0),
+                  blurRadius: 1.0,
                 ),
-              );
-            },
-            child: Container(
-              width: 50.0,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 0),
-                    blurRadius: 1.0,
-                  ),
-                ],
-              ),
-              child: Icon(Icons.settings),
+              ],
             ),
+            child: Icon(Icons.settings),
           ),
         ),
       ],

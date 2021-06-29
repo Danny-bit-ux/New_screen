@@ -51,9 +51,9 @@ class _ContainerBookNowState extends State<ContainerBookNow> {
         setState(() {});
       },
       selected: selected.contains(index),
-      selectedColor: Colors.deepOrange,
+      selectedColor: Colors.white,
       labelStyle: TextStyle(color: Colors.white),
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
     );
   }
 }

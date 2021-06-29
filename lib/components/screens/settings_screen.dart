@@ -6,10 +6,16 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SettingsBody(),
-      ),
-    );
+    return DraggableScrollableSheet(
+        builder: (BuildContext context, ScrollController) {
+      return Container(
+        color: Colors.white,
+        child: ListView.builder(itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text('Settings $index'),
+          );
+        }),
+      );
+    });
   }
 }

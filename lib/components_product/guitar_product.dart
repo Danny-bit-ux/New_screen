@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class GuitarProduct extends StatelessWidget {
+  final String image, tag;
   GuitarProduct({
     Key key,
+    this.image,
+    this.tag,
   }) : super(key: key);
 
   @override
@@ -29,14 +32,14 @@ class GuitarProduct extends StatelessWidget {
           child: GestureDetector(
             onTap: () => _fullImagePage(context),
             child: Hero(
-              tag: 'tag-string',
+              tag: tag,
               child: Container(
                 height: 180.0,
                 width: 150.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Image.asset('asset/images/electric_guitar_PNG24177.png'),
+                child: Image.asset(image),
               ),
             ),
           ),
@@ -57,8 +60,8 @@ class GuitarProduct extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Hero(
-                tag: 'tag-string',
-                child: Image.asset('asset/images/electric_guitar_PNG24177.png'),
+                tag: tag,
+                child: Image.asset(image),
               )
             ],
           ),

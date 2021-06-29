@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screen/components/screens/product_screen.dart';
 
 import 'package:flutter_screen/constants.dart';
 
 // ignore: must_be_immutable
 class DuplexApartmentGuitar extends StatelessWidget {
-  final String name, york, comment, image;
+  final String name, york, comment, image, tag;
 
-  final double note, price;
+  final int price;
+
+  final double note;
+
+  Function tap;
 
   DuplexApartmentGuitar({
     Key key,
@@ -15,8 +18,10 @@ class DuplexApartmentGuitar extends StatelessWidget {
     this.york,
     this.comment,
     this.note,
-    this.price,
     this.image,
+    this.tap,
+    this.tag,
+    this.price,
   }) : super(key: key);
 
   @override
@@ -32,16 +37,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return ProductScreen();
-              },
-            ),
-          );
-        },
+        onTap: tap,
         child: Container(
           height: 200.0,
           width: 350,
@@ -61,7 +57,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
               GestureDetector(
                 onTap: () => _fullImagePage(context),
                 child: Hero(
-                  tag: 'my-tag',
+                  tag: tag,
                   child: Container(
                     height: 180.0,
                     width: 150.0,
@@ -137,7 +133,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Text(
-                          "\$1,500",
+                          "\$$price",
                           style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
@@ -163,7 +159,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (ctx) => Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFFFFFF),
+          backgroundColor: Color(0xFFFEFEFE),
           title: Text(name),
         ),
         body: Center(
@@ -171,7 +167,7 @@ class DuplexApartmentGuitar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Hero(
-                tag: 'my-tag',
+                tag: tag,
                 child: Image.asset(image),
               )
             ],
